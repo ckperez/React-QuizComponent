@@ -9,7 +9,7 @@ class QuizQuestion extends Component {
     }
   }
 
-  handleClick (buttonText) {
+  handleClick = (buttonText) => {
     if (this.props.quiz_question.answer === buttonText) {
       this.setState( state => {
         return { incorrectAnswer: false }
@@ -31,7 +31,7 @@ class QuizQuestion extends Component {
         <section>
           <ul>
             {this.props.quiz_question.answer_options.map( (o, i) => {
-              return <QuizQuestionButton clickHandler={this.handleClick.bind(this)} key={i} button_text={o}/>
+              return <QuizQuestionButton clickHandler={this.handleClick} key={i} button_text={o}/>
             })}
           </ul>
         </section>
